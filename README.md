@@ -1,24 +1,5 @@
 # Violetaxx-Entrega1_ProyectoE
  Componente 1: Proyección de imágenes
- Objetivo: A partir de una serie ordenada de imágenes que conforman un volumen 3D, construir la proyección
- del volumen hacia un plano de acuerdo a una dirección y a un criterio de proyección, utilizando estructuras
- lineales.
- La proyección de imágenes tridimensionales hace referencia a la generación de una representación planar
- (2D) de un objeto o escena 3D. Un tipo particular de proyección es comúnmente utilizado para la producción
- de radiografías. En este caso, el objeto a visualizar es bombardeado por una serie de rayos X, paralelos entre
- sí y perpendiculares a la superficie de captura. La cantidad de energía del rayo que alcanza a atravesar el
- objeto se refleja en la superficie de captura, donde queda plasmada la imagen de la proyección. Este proceso
- se ilustra en la Figura 2.
- De esta forma, el componente 1 del sistema corresponderá a una simulación del proceso de captura
- de radiografías. Para esto, se recibirá una serie ordenada de imágenes 2D, es decir, una conjunto de
- imágenes que juntas (en un orden específico) representan una escena 3D. Luego, se simulará el proceso de
- proyección analizando linealmente la información del volumen en una dirección específica, es decir, colapsando
- 2
-Figure 2: Ilustración del proceso de generación de una proyección planar por medio de rayos X (Tomado de
- http://www.sv.vt.edu/classes/ESM4714/methods/FuncExt.html)
- la información contenida en cada una de las filas del volumen en un único píxel. Esto generará una proyección
- 2D de la imagen volumétrica en la dirección especificada. El componente se implementará con los siguientes
- comandos:
  
  • COMANDO(VIOLETA): cargar_imagen nombre_imagen.pgm
  posibles salidas en pantalla:
