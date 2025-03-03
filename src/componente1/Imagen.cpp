@@ -1,28 +1,28 @@
 #include "Imagen.h"
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
-//constructor
-Imagen::Imagen() : ancho(0), alto(0), maxVal(0){}
+Imagen::Imagen() : ancho(0), alto(0), maxVal(0) {}//constructor
 
 //operacion para cargar una imagen desde un archivo PGM
-bool Imagen::cargar(const string& nombreArchivo){
-    ifstream archivo(nombreArchivo);
-    if(!archivo) {
-        cout<<"Error: No se pudo abrir el archivo"<<nombreArchivo <<endl;
+bool Imagen::cargar(const string& nomArchi){
+    ifstream archivo(nomArchi);
+    if(!archivo){
+        cout << "Error: No se pudo abrir el archivo " << nomArchi << endl;
         return false;
     }
 
     string linea;
-    archivo>>linea;
+    archivo >> linea;
     if(linea != "P2"){
         cout<<"Error: Formato de archivo no soportado"<<endl;
         return false;
     }
 
     archivo>>ancho>>alto;
-    archivo>> maxVal;
+    archivo>>maxVal;
 
     //redimensionar la matriz de píxeles
     pixeles.resize(alto, vector<int>(ancho));
@@ -34,8 +34,12 @@ bool Imagen::cargar(const string& nombreArchivo){
         }
     }
 
-    nombre= nombreArchivo;
-    cout<<"La imagen "<<nombreArchivo<<" ha sido cargada."<<endl;
+    nombre = nomArchi;
+    cout<<"La imagen "<<nomArchi<<" ha sido cargada."<<endl;
     return true;
 }
 
+//operación para mostrar informacion de la imagen
+void Imagen::mostrarInfo() const {
+    cout<<"Imagen cargada en memoria: "<<nombre<<", ancho: "<<ancho<<", alto: "<<alto<<", maximo valor: "<<maxVal<<endl;
+}
