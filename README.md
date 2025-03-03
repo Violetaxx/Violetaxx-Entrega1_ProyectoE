@@ -19,6 +19,7 @@ Figure 2: Ilustración del proceso de generación de una proyección planar por 
  la información contenida en cada una de las filas del volumen en un único píxel. Esto generará una proyección
  2D de la imagen volumétrica en la dirección especificada. El componente se implementará con los siguientes
  comandos:
+ 
  • COMANDO(VIOLETA): cargar_imagen nombre_imagen.pgm
  posibles salidas en pantalla:
  (proceso satisfactorio) La imagen nombre_imagen.pgm ha sido cargada.
@@ -29,6 +30,7 @@ Figure 2: Ilustración del proceso de generación de una proyección planar por 
  erróneo o no existe), el comando debe mostrar el mensaje de error. Solo es posible cargar una única
  imagen por sesión, de tal forma que si el comando es llamado nuevamente con otro nombre de archivo,
  la nueva imagen sobreescribe en memoria a la que ya estaba cargada anteriormente.
+ 
  • COMANDO: cargar_volumen nombre_base n_im
  salida en pantalla:
  (proceso satisfactorio) El volumen nombre_base ha sido cargado.
@@ -43,6 +45,7 @@ Figure 2: Ilustración del proceso de generación de una proyección planar por 
  alguna imagen), el comando debe mostrar el mensaje de error. Solo es posible cargar un único volumen
  por sesión, de tal forma que si el comando es llamado nuevamente con otro nombre base, el nuevo
  volumen sobreescribe en memoria al que ya estaba cargado anteriormente.
+ 
  • COMANDO(VIOLETA): info_imagen
  salida en pantalla:
  (proceso satisfactorio) Imagen cargada en memoria: nombre_imagen.pgm, ancho: W, alto:
@@ -51,6 +54,7 @@ Figure 2: Ilustración del proceso de generación de una proyección planar por 
  descripción: El comando debe mostrar en pantalla la información básica de la imagen actualmente
  cargada en memoria: nombre de archivo, ancho en pixeles y alto en pixeles. Si no se ha cargado aún
  una imagen en memoria, el comando debe mostrar el mensaje de error.
+ 
  • COMANDO(VIOLETA): info_volumen
  salida en pantalla:
  3
@@ -60,6 +64,7 @@ Figure 2: Ilustración del proceso de generación de una proyección planar por 
  descripción: El comando debe mostrar en pantalla la información básica del volumen (serie de imágenes)
  cargado actualmente en memoria: nombre base, cantidad de imágenes, ancho en pixeles y alto en pixeles.
  Si no se ha cargado aún un volumen en memoria, el comando debe mostrar el mensaje de error.
+ 
  • COMANDO: proyeccion2D dirección criterio nombre_archivo.pgm
  salida en pantalla:
  (proceso satisfactorio) La proyección 2D del volumen en memoria ha sido generada y almacenada
