@@ -39,11 +39,17 @@ bool Imagen::cargar(const string& nombreArchivo) {
     pixeles.resize(altoImagen, vector<int>(anchoImagen));
 
     //leer los valores de los píxeles
-    for (int i = 0; i < altoImagen; ++i) {
-        for (int j = 0; j < anchoImagen; ++j) {
-            archivo >> pixeles[i][j];
+    for(int i = 0; i < altoImagen; ++i){
+        for(int j = 0; j < anchoImagen; ++j){
+            int pixel;
+            archivo >> pixel;
+            if(pixel < 0 || pixel > 255){//manejo de errores
+            cerr << "Error: Valor de píxel fuera de rango en " << nombreArchivo << endl;
+            return false;
         }
+        pixeles[i][j] = pixel;
     }
+}
 
     nombreImagen = nombreArchivo;
     cout << "La imagen " << nombreArchivo << " ha sido cargada." << endl;
