@@ -2,44 +2,55 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
+using namespace std; 
 
-Imagen::Imagen() : ancho(0), alto(0), maxVal(0) {}//constructor
+Imagen::Imagen() : anchoImagen(0), altoImagen(0) {}//constructor
+
+//getters
+string Imagen::getNombreImagen() const { return nombreImagen; }
+int Imagen::getAltoImagen() const { return altoImagen; }
+int Imagen::getAnchoImagen() const { return anchoImagen; }
+vector<vector<int>> Imagen::getPixeles() const { return pixeles; }
+
+//setters
+void Imagen::setNombreImagen(const string& nombre) { nombreImagen = nombre; }
+void Imagen::setAltoImagen(int alto) { altoImagen = alto; }
+void Imagen::setAnchoImagen(int ancho) { anchoImagen = ancho; }
+void Imagen::setPixeles(const vector<vector<int>>& pixeles) { Imagen::pixeles = pixeles; }
 
 //operacion para cargar una imagen desde un archivo PGM
-bool Imagen::cargar(const string& nomArchi){
-    ifstream archivo(nomArchi);
-    if(!archivo){
-        cout << "Error: No se pudo abrir el archivo " << nomArchi << endl;
+bool Imagen::cargar(const string& nombreArchivo) {
+    ifstream archivo(nombreArchivo);
+    if (!archivo) {
+        cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << endl;
         return false;
     }
 
     string linea;
     archivo >> linea;
-    if(linea != "P2"){
-        cout<<"Error: Formato de archivo no soportado"<<endl;
+    if (linea != "P2") {
+        cerr << "Error: Formato de archivo no soportado" << endl;
         return false;
     }
 
-    archivo>>ancho>>alto;
-    archivo>>maxVal;
+    archivo >> anchoImagen >> altoImagen;
 
     //redimensionar la matriz de píxeles
-    pixeles.resize(alto, vector<int>(ancho));
+    pixeles.resize(altoImagen, vector<int>(anchoImagen));
 
     //leer los valores de los píxeles
-    for(int i = 0; i < alto; ++i){
-        for(int j = 0; j < ancho; ++j){
-            archivo>>pixeles[i][j];
+    for (int i = 0; i < altoImagen; ++i) {
+        for (int j = 0; j < anchoImagen; ++j) {
+            archivo >> pixeles[i][j];
         }
     }
 
-    nombre = nomArchi;
-    cout<<"La imagen "<<nomArchi<<" ha sido cargada."<<endl;
+    nombreImagen = nombreArchivo;
+    cout << "La imagen " << nombreArchivo << " ha sido cargada." << endl;
     return true;
 }
 
-//operación para mostrar informacion de la imagen
+//operación para mostrar información de la imagen
 void Imagen::mostrarInfo() const {
-    cout<<"Imagen cargada en memoria: "<<nombre<<", ancho: "<<ancho<<", alto: "<<alto<<", maximo valor: "<<maxVal<<endl;
+    cout << "Imagen cargada en memoria: " << nombreImagen << ", ancho: " << anchoImagen << ", alto: " << altoImagen << endl;
 }
