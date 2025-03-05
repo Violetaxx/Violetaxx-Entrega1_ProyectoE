@@ -19,7 +19,7 @@ void Imagen::setAnchoImagen(int ancho) { anchoImagen = ancho; }
 void Imagen::setPixeles(const vector<vector<int>>& pixeles) { Imagen::pixeles = pixeles; }
 
 //operacion para cargar una imagen desde un archivo PGM
-bool Imagen::cargar(const string& nombreArchivo) {
+bool Imagen::cargar_imagen(const string& nombreArchivo) {
     ifstream archivo(nombreArchivo);
     if (!archivo) {
         cerr << "Error: No se pudo abrir el archivo " << nombreArchivo << endl;
@@ -57,6 +57,6 @@ bool Imagen::cargar(const string& nombreArchivo) {
 }
 
 //operación para mostrar información de la imagen
-void Imagen::mostrarInfo() const {
+void Imagen::info_imagen() const {
     cout << "Imagen cargada en memoria: " << nombreImagen << ", ancho: " << anchoImagen << ", alto: " << altoImagen << endl;
 }
