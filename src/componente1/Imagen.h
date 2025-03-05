@@ -28,7 +28,7 @@ public:
 
     //operaciones
     bool cargar(const std::string& nombreArchivo);
-    void mostrarInfo() const;
+    void info_imagen() const;
 };
 
 #endif // IMAGEN_H
