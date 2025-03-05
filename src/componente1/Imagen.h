@@ -27,7 +27,7 @@ public:
     void setPixeles(const std::vector<std::vector<int>>& pixeles);
 
     //operaciones
-    bool cargar(const std::string& nombreArchivo);
+    bool cargar_imagen(const std::string& nombreArchivo);
     void info_imagen() const;
 };
 
