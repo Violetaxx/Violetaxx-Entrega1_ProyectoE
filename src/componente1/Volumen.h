@@ -7,10 +7,15 @@
 
 class Volumen {
 private:
+    std::vector<Imagen> imagenes;
+    std::string nombreBase;
 
 public:
-    // Operaciones
-    void info_volumen(const Volumen& volumen) const;
+    //constructor
+    Volumen(const std::string& nombreBase);
+
+    //operaciones
+    void info_volumen() const;
 };
 
 #endif // VOLUMEN_H
