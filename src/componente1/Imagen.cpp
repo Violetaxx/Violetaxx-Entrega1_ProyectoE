@@ -58,5 +58,8 @@ bool Imagen::cargar_imagen(const string& nombreArchivo) {
 
 //operación para mostrar información de la imagen
 void Imagen::info_imagen() const {
-    cout << "Imagen cargada en memoria: " << nombreImagen << ", ancho: " << anchoImagen << ", alto: " << altoImagen << endl;
+    cout << "Información de la imagen:" << endl;
+    cout << "Nombre de la imagen: " << nombreImagen << endl;
+    cout << "Ancho de la imagen: " << anchoImagen << " píxeles" << endl;
+    cout << "Alto de la imagen: " << altoImagen << " píxeles" << endl;
 }
